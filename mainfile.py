@@ -4,7 +4,7 @@
 """ Photo Sketching Using Python """
 import cv2
 
-img = cv2.imread("elon.jpg")
+img = cv2.imread("donald.jpg")
 
 ## Image to Gray Image
 gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -23,4 +23,11 @@ sketck = cv2.divide(gray_image, inverted_blurred_image, scale=256.0)
 
 cv2.imshow("Original Image", img)
 cv2.imshow("Pencil Sketch", sketck)
+filename = 'sketch.jpg'
+
+# Using cv2.imwrite() method
+# Saving the image
+cv2.imwrite(filename, sketck)
+
 cv2.waitKey(0)
+
